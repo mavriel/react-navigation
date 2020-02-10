@@ -84,7 +84,7 @@ class CardStack extends React.Component {
 
   _childEventSubscribers = {};
 
-  componentWillReceiveProps(props) {
+  UNSAFE_componentWillReceiveProps(props) {
     if (props.screenProps !== this.props.screenProps) {
       this._screenDetails = {};
     }

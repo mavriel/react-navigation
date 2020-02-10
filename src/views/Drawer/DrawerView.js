@@ -19,7 +19,7 @@ export default class DrawerView extends React.PureComponent {
 
   _childEventSubscribers = {};
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this._updateScreenNavigation(this.props.navigation);
 
     Dimensions.addEventListener('change', this._updateWidth);
@@ -40,7 +40,7 @@ export default class DrawerView extends React.PureComponent {
     });
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (
       this.props.navigation.state.index !== nextProps.navigation.state.index
     ) {

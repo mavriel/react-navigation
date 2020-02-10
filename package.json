@@ -1,6 +1,6 @@
 {
   "name": "react-navigation",
-  "version": "100.0.0",
+  "version": "100.0.1",
   "description": "Routing and navigation for your React Native apps",
   "main": "src/react-navigation.js",
   "repository": {
@@ -26,7 +26,8 @@
   ],
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+
   },
   "dependencies": {
     "clamp": "^1.0.1",

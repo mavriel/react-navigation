@@ -16,7 +16,7 @@ export default function create(Component) {
       this._pointerEvents = this._computePointerEvents();
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
       this._onPositionChange = this._onPositionChange.bind(this);
       this._onComponentRef = this._onComponentRef.bind(this);
     }
@@ -29,7 +29,7 @@ export default function create(Component) {
       this._positionListener && this._positionListener.remove();
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
       this._bindPosition(nextProps);
     }
 

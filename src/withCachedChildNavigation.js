@@ -12,11 +12,11 @@ export default function withCachedChildNavigation(Comp) {
 
     _childEventSubscribers = {};
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
       this._updateNavigationProps(this.props.navigation);
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
       this._updateNavigationProps(nextProps.navigation);
     }
 
