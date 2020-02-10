@@ -163,7 +163,7 @@ class MainScreen extends React.Component<any, State> {
     scrollY: new Animated.Value(0),
   };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     Asset.fromModule(
       require('react-navigation/src/views/assets/back-icon-mask.png')
     ).downloadAsync();
@@ -310,9 +310,9 @@ const AppNavigator = StackNavigator(
     headerMode: 'none',
 
     /*
-   * Use modal on iOS because the card mode comes from the right,
-   * which conflicts with the drawer example gesture
-   */
+     * Use modal on iOS because the card mode comes from the right,
+     * which conflicts with the drawer example gesture
+     */
     mode: Platform.OS === 'ios' ? 'modal' : 'card',
   }
 );

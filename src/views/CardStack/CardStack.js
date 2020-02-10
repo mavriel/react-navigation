@@ -84,7 +84,7 @@ class CardStack extends React.Component {
 
   _childEventSubscribers = {};
 
-  componentWillReceiveProps(props) {
+  UNSAFE_componentWillReceiveProps(props) {
     if (props.screenProps !== this.props.screenProps) {
       this._screenDetails = {};
     }
@@ -110,13 +110,21 @@ class CardStack extends React.Component {
   }
 
   _isRouteFocused = route => {
-    const { transitionProps: { navigation: { state } } } = this.props;
+    const {
+      transitionProps: {
+        navigation: { state },
+      },
+    } = this.props;
     const focusedRoute = state.routes[state.index];
     return route === focusedRoute;
   };
 
   _getScreenDetails = scene => {
-    const { screenProps, transitionProps: { navigation }, router } = this.props;
+    const {
+      screenProps,
+      transitionProps: { navigation },
+      router,
+    } = this.props;
     let screenDetails = this._screenDetails[scene.key];
     if (!screenDetails || screenDetails.state !== scene.route) {
       if (!this._childEventSubscribers[scene.route.key]) {
