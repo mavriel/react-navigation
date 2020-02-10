@@ -1,6 +1,6 @@
 {
   "name": "react-navigation",
-  "version": "100.0.2",
+  "version": "100.0.3",
   "description": "Routing and navigation for your React Native apps",
   "main": "src/react-navigation.js",
   "repository": {
@@ -33,8 +33,7 @@
     "hoist-non-react-statics": "^2.2.0",
     "path-to-regexp": "^1.7.0",
     "prop-types": "^15.7.2",
-    "react-native-drawer-layout-polyfill": "^1.3.2",
-    "react-native-safe-area-view": "0.13.1",
+    "react-native-safe-area-view": "1.0.0",
     "react-native-tab-view": "github:react-navigation/react-native-tab-view"
   },
   "devDependencies": {

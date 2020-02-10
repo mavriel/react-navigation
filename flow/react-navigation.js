@@ -430,21 +430,6 @@ declare module 'react-navigation' {
   |};
 
   /**
-   * Drawer
-   */
-
-  declare export type NavigationDrawerScreenOptions = {|
-    ...$Exact<NavigationScreenOptions>,
-    drawerIcon?:
-      | React$Node
-      | ((options: { tintColor: ?string, focused: boolean }) => ?React$Node),
-    drawerLabel?:
-      | React$Node
-      | ((options: { tintColor: ?string, focused: boolean }) => ?React$Node),
-    drawerLockMode?: 'unlocked' | 'locked-closed' | 'locked-open',
-  |};
-
-  /**
    * Navigator Prop
    */
 
@@ -828,30 +813,6 @@ declare module 'react-navigation' {
     config?: _SwitchNavigatorConfig
   ): NavigationContainer<*, *, *>;
 
-  declare type _DrawerViewConfig = {|
-    drawerLockMode?: 'unlocked' | 'locked-closed' | 'locked-open',
-    drawerWidth?: number | (() => number),
-    drawerPosition?: 'left' | 'right',
-    drawerOpenRoute?: string,
-    drawerCloseRoute?: string,
-    drawerToggleRoute?: string,
-    contentComponent?: React$ElementType,
-    contentOptions?: {},
-    style?: ViewStyleProp,
-    useNativeAnimations?: boolean,
-    drawerBackgroundColor?: string,
-    screenProps?: {},
-  |};
-  declare type _DrawerNavigatorConfig = $Exact<{
-    ...NavigationTabRouterConfig,
-    ..._DrawerViewConfig,
-    containerConfig?: void,
-  }>;
-  declare export function DrawerNavigator(
-    routeConfigs: NavigationRouteConfigMap,
-    config?: _DrawerNavigatorConfig
-  ): NavigationContainer<*, *, *>;
-
   declare export function StackRouter(
     routeConfigs: NavigationRouteConfigMap,
     stackConfig?: NavigationStackRouterConfig
@@ -960,56 +921,6 @@ declare module 'react-navigation' {
     width?: ?number,
   };
   declare export var HeaderBackButton: React$ComponentType<_HeaderBackButtonProps>;
-
-  declare type _DrawerViewProps = {
-    drawerLockMode?: 'unlocked' | 'locked-closed' | 'locked-open',
-    drawerWidth: number | (() => number),
-    drawerPosition: 'left' | 'right',
-    drawerOpenRoute: string,
-    drawerCloseRoute: string,
-    drawerToggleRoute: string,
-    contentComponent: React$ElementType,
-    contentOptions?: {},
-    style?: ViewStyleProp,
-    useNativeAnimations: boolean,
-    drawerBackgroundColor: string,
-    screenProps?: {},
-    navigation: NavigationScreenProp<NavigationState>,
-    router: NavigationRouter<NavigationState, NavigationDrawerScreenOptions>,
-  };
-  declare export var DrawerView: React$ComponentType<_DrawerViewProps>;
-
-  declare type _DrawerScene = {
-    route: NavigationRoute,
-    focused: boolean,
-    index: number,
-    tintColor?: string,
-  };
-  declare type _DrawerItem = {
-    route: NavigationRoute,
-    focused: boolean,
-  };
-  declare type _DrawerItemsProps = {
-    navigation: NavigationScreenProp<NavigationState>,
-    items: Array<NavigationRoute>,
-    activeItemKey?: ?string,
-    activeTintColor?: string,
-    activeBackgroundColor?: string,
-    inactiveTintColor?: string,
-    inactiveBackgroundColor?: string,
-    getLabel: (scene: _DrawerScene) => ?(React$Node | string),
-    renderIcon: (scene: _DrawerScene) => ?React$Node,
-    onItemPress: (info: _DrawerItem) => void,
-    itemsContainerForceInset?: Object,
-    itemsContainerStyle?: ViewStyleProp,
-    itemStyle?: ViewStyleProp,
-    labelStyle?: TextStyleProp,
-    activeLabelStyle?: TextStyleProp,
-    inactiveLabelStyle?: TextStyleProp,
-    iconContainerStyle?: ViewStyleProp,
-    drawerPosition: 'left' | 'right',
-  };
-  declare export var DrawerItems: React$ComponentType<_DrawerItemsProps>;
 
   declare type _TabViewProps = {
     tabBarComponent?: React$ElementType,

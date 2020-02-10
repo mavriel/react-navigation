@@ -28,9 +28,6 @@ module.exports = {
   get TabNavigator() {
     return require('./navigators/TabNavigator').default;
   },
-  get DrawerNavigator() {
-    return require('./navigators/DrawerNavigator').default;
-  },
 
   // Routers
   get StackRouter() {
@@ -69,14 +66,6 @@ module.exports = {
   },
   get HeaderBackButton() {
     return require('./views/Header/HeaderBackButton').default;
-  },
-
-  // DrawerView
-  get DrawerView() {
-    return require('./views/Drawer/DrawerView').default;
-  },
-  get DrawerItems() {
-    return require('./views/Drawer/DrawerNavigatorItems').default;
   },
 
   // TabView
