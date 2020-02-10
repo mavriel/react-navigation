@@ -1,7 +1,6 @@
 import React from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { polyfill } from 'react-lifecycles-compat';
 
 import SceneView from './SceneView';
 
@@ -9,7 +8,7 @@ const FAR_FAR_AWAY = 3000; // this should be big enough to move the whole view o
 
 class ResourceSavingSceneView extends React.PureComponent {
   constructor(props) {
-    super();
+    super(props);
 
     this.state = {
       awake: props.lazy ? props.isFocused : true,
@@ -77,4 +76,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default polyfill(ResourceSavingSceneView);
+export default ResourceSavingSceneView;
