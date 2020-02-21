@@ -19,6 +19,7 @@ function validateRouteConfigMap(routeConfigs) {
       !screenComponent ||
       (typeof screenComponent !== 'function' &&
         typeof screenComponent !== 'string' &&
+        typeof screenComponent !== 'object' &&
         !routeConfig.getScreen)
     ) {
       throw new Error(
